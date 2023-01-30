@@ -11,4 +11,13 @@ You probably have listened to music once or twice. Have you ever wondered what y
 
 ## Key Features
 
+* Ability to sign in via Spotify (possibly Apple Music in the future)
+* Access to various statistics that Spotify doesn't directly provide
+* Viewable charts and graphs based on usage over time
+* Ability to generate new playlists based on recommended songs (maybe)
 
+## Useful Information
+
+* Domain: musicmetrics.app
+* Elastic IP: 3.13.23.247
+* SSH into EC2 server: ssh -i id_rsa.pem ubuntu@musicmetrics.app
