@@ -18,6 +18,7 @@ You probably have listened to music once or twice. Have you ever wondered what y
 
 ## Useful Information
 
+* EC2 instance: t3.nano running on us-east-2
 * Domain: musicmetrics.app
 * Elastic IP: 3.13.23.247
 * SSH into EC2 server: ssh -i id_rsa.pem ubuntu@musicmetrics.app
