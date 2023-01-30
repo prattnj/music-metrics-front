@@ -7,6 +7,8 @@ You probably have listened to music once or twice. Have you ever wondered what y
 
 ## Design
 
+![Design](design.jpg)
+
 ## Key Features
 
 
