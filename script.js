@@ -579,13 +579,6 @@ function authenticate() {
     url += '&scope=' + encodeURIComponent(scope)
     url += '&redirect_uri=' + encodeURIComponent(redirect_uri)
 
-    console.log(url)
-
     window.location = url;
-
-    /*fetch(url)
-        .then(response => response.text())
-        .then(data => console.log(data))
-        .catch(error => console.error(error))*/
 
 }
