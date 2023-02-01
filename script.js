@@ -588,13 +588,8 @@ function authenticate() {
 
 function storeAuthInfo(url) {
     url = url.replace('#', '?')
-    console.log(url)
 
-    const url2 = new URL(url)
-    console.log(url2.search)
-
-    const urlParams = new URLSearchParams(url2.search)
-    console.log(urlParams)
+    const urlParams = new URLSearchParams(new URL(url).search)
 
     if (!urlParams.has('state')) return;
     if (!urlParams.has('error')) {
