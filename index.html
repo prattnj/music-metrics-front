@@ -40,7 +40,7 @@
     if (landing_url.length > 50) {
       if (!validateState(landing_url)) {
         // todo put up error html page (state not valid)
-        console.log("ERROR: INVALID STATE")
+        console.log('ERROR: INVALID STATE')
       }
       storeAuthInfo(landing_url)
       window.location = 'https://musicmetrics.app/'

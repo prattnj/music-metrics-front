@@ -587,24 +587,24 @@ function authenticate() {
 }
 
 function storeAuthInfo(url) {
-    console.log(url)
+    sessionStorage.setItem('url', url)
 
     const urlParams = new URLSearchParams(url)
 
-    if (!urlParams.has("state")) return;
-    if (!urlParams.has("error")) {
-        const access_token = urlParams.get("access_token")
-        const token_type = urlParams.get("token_type")
-        const expires_in = urlParams.get("expires_in")
-        sessionStorage.setItem("access_token", access_token)
-        sessionStorage.setItem("token_type", token_type)
-        sessionStorage.setItem("expires_in", expires_in)
+    if (!urlParams.has('state')) return;
+    if (!urlParams.has('error')) {
+        const access_token = urlParams.get('access_token')
+        const token_type = urlParams.get('token_type')
+        const expires_in = urlParams.get('expires_in')
+        sessionStorage.setItem('access_token', access_token)
+        sessionStorage.setItem('token_type', token_type)
+        sessionStorage.setItem('expires_in', expires_in)
     } else {
-        const error = urlParams.get("error")
-        sessionStorage.setItem("error", error)
+        const error = urlParams.get('error')
+        sessionStorage.setItem('error', error)
     }
-    const state = urlParams.get("state")
-    sessionStorage.setItem("state", state)
+    const state = urlParams.get('state')
+    sessionStorage.setItem('state', state)
 
 }
 
