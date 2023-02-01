@@ -38,7 +38,11 @@
   window.onload = function () {
     let returned_url = window.location.href
     if (returned_url.length > 50) {
-      sessionStorage.setItem('token_url', returned_url)
+      if (!validateState(returned_url)) {
+        // todo put up error html page (state not valid)
+        console.log("ERROR: INVALID STATE")
+      }
+      storeAuthInfo(returned_url)
       window.location = 'https://musicmetrics.app/'
     }
   }

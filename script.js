@@ -561,6 +561,7 @@ function authenticate() {
 
     let client_id = '8b99139c99794d4b9e89b8367b0ac3f4'
     let redirect_uri = 'https://musicmetrics.app/'
+    let state = Math.floor(Math.random() * 10000000) // random 7 digit number
     let scope = 'user-read-playback-state ' +
         'playlist-read-private ' +
         'playlist-read-collaborative ' +
@@ -578,7 +579,36 @@ function authenticate() {
     url += '&client_id=' + encodeURIComponent(client_id)
     url += '&scope=' + encodeURIComponent(scope)
     url += '&redirect_uri=' + encodeURIComponent(redirect_uri)
+    url += '&state=' + encodeURIComponent(state)
 
     window.location = url;
 
+}
+
+function storeAuthInfo(url) {
+
+    const urlParams = new URLSearchParams(url)
+
+    if (!urlParams.has("state")) return;
+    if (!urlParams.has("error")) {
+        const access_token = urlParams.get("access_token")
+        const token_type = urlParams.get("token_type")
+        const expires_in = urlParams.get("expires_in")
+        sessionStorage.setItem("access_token", access_token)
+        sessionStorage.setItem("token_type", token_type)
+        sessionStorage.setItem("expires_in", expires_in)
+    } else {
+        const error = urlParams.get("error")
+        sessionStorage.setItem("error", error)
+    }
+    const state = urlParams.get("state")
+    sessionStorage.setItem("state", state)
+
+}
+
+function validateState(url) {
+    const urlParams = new URLSearchParams(url)
+    const stored_state = sessionStorage.getItem("state")
+    if (!urlParams.has("state") || stored_state == null) return false;
+    return stored_state === urlParams.get("state")
 }
