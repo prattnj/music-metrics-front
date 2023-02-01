@@ -37,7 +37,7 @@
   window.onload = function () {
     console.log("here")
     let returned_url = window.location.href
-    window.location = 'https://musicmetrics.app/'
+    if (returned_url.length > 20) window.location = 'https://musicmetrics.app/'
     console.log(returned_url)
   }
 </script>
