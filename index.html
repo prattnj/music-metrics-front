@@ -34,14 +34,13 @@
 </div>
 
 <script>
+  // Stores the user's access token from Spotify (which defaults to being stored in the URL) and reloads
   window.onload = function () {
-    console.log("here")
     let returned_url = window.location.href
     if (returned_url.length > 50) {
       sessionStorage.setItem('token_url', returned_url)
       window.location = 'https://musicmetrics.app/'
     }
-    console.log(returned_url)
   }
 </script>
 
