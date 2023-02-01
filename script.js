@@ -587,6 +587,7 @@ function authenticate() {
 }
 
 function storeAuthInfo(url) {
+    console.log(url)
 
     const urlParams = new URLSearchParams(url)
 
