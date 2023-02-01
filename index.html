@@ -36,7 +36,7 @@
 <script>
   // Stores the user's access token from Spotify (which defaults to being stored in the URL) and reloads
   window.onload = function () {
-    let landing_url = window.location.href
+    let landing_url = location.search
     if (landing_url.length > 50) {
       if (!validateState(landing_url)) {
         // todo put up error html page (state not valid)
