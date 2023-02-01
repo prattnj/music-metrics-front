@@ -573,7 +573,7 @@ function authenticate() {
         'user-top-read ' +
         'user-read-recently-played ' +
         'user-read-private ' +
-        'user-library-read '
+        'user-library-read'
 
     let url = 'https://accounts.spotify.com/authorize'
     url += '?response_type=token'
