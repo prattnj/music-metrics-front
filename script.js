@@ -587,10 +587,12 @@ function authenticate() {
 }
 
 function storeAuthInfo(url) {
-    url = url.replaceAll('#', '?')
+    //url = url.replaceAll('#', '?')
     sessionStorage.setItem('url', url)
 
-    const urlParams = new URLSearchParams(url)
+    const url2 = new URL(url)
+
+    const urlParams = new URLSearchParams(url2)
 
     if (!urlParams.has('state')) return;
     if (!urlParams.has('error')) {
