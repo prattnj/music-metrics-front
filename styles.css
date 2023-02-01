@@ -2,17 +2,13 @@
     border: red 2px solid;
 }
 
-.title-color {
-    color: #9c14c9;
-}
-
 .nav {
     position: fixed;
     width: 100%;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #222222;
+    background-color: #1a1e1f;
 
     display: flex;
     flex-direction: row;
@@ -21,7 +17,7 @@
 }
 
 .logo {
-    color: #9c14c9;
+    color: #3de2ff;
     font-size: 48px;
 }
 
