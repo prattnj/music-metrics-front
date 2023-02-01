@@ -1,0 +1,45 @@
+.test-border {
+    border: red 2px solid;
+}
+
+.title-color {
+    color: #9c14c9;
+}
+
+.nav {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #222222;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.logo {
+    color: #9c14c9;
+    font-size: 48px;
+}
+
+.login-button-wrapper {
+    width: 100%;
+    text-align: center;
+}
+
+.login-button {
+    background-color: #1DB954;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    color: #222222;
+}
+
+.login-button:hover {
+    background-color: #168B3F;
+    color: #bbbbbb;
+    cursor: pointer;
+}
