@@ -562,6 +562,7 @@ function authenticate() {
     let client_id = '8b99139c99794d4b9e89b8367b0ac3f4'
     let redirect_uri = 'https://musicmetrics.app/'
     let state = Math.floor(Math.random() * 10000000) // random 7 digit number
+    sessionStorage.setItem('state', state.toString())
     let scope = 'user-read-playback-state ' +
         'playlist-read-private ' +
         'playlist-read-collaborative ' +
@@ -608,7 +609,7 @@ function storeAuthInfo(url) {
 
 function validateState(url) {
     const urlParams = new URLSearchParams(url)
-    const stored_state = sessionStorage.getItem("state")
-    if (!urlParams.has("state") || stored_state == null) return false;
-    return stored_state === urlParams.get("state")
+    const stored_state = sessionStorage.getItem('state')
+    if (!urlParams.has('state') || stored_state == null) return false;
+    return stored_state === urlParams.get('state')
 }
