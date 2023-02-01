@@ -587,7 +587,7 @@ function authenticate() {
 }
 
 function storeAuthInfo(url) {
-    url.replaceAll('#', '?')
+    url.replace('#', '?')
     url = 'TEST ' + url
     sessionStorage.setItem('url', url)
 
