@@ -34,7 +34,12 @@
 </div>
 
 <script>
-  window.onload = function () { console.log("here") }
+  window.onload = function () {
+    console.log("here")
+    let returned_url = window.location.href
+    window.location = 'https://musicmetrics.app/'
+    console.log(returned_url)
+  }
 </script>
 
 </body>
