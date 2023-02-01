@@ -603,8 +603,6 @@ function storeAuthInfo(url) {
         const error = urlParams.get('error')
         sessionStorage.setItem('error', error)
     }
-    const state = urlParams.get('state')
-    sessionStorage.setItem('state', state)
 
 }
 
