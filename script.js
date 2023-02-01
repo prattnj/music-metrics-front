@@ -592,7 +592,7 @@ function storeAuthInfo(url) {
 
     const url2 = new URL(url)
 
-    const urlParams = new URLSearchParams(url2)
+    const urlParams = new URLSearchParams(url2.search)
 
     if (!urlParams.has('state')) return;
     if (!urlParams.has('error')) {
