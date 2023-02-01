@@ -588,6 +588,7 @@ function authenticate() {
 
 function storeAuthInfo(url) {
     url.replaceAll('#', '?')
+    url = 'TEST ' + url
     sessionStorage.setItem('url', url)
 
     const urlParams = new URLSearchParams(url)
