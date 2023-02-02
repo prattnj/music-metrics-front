@@ -23,7 +23,7 @@
         if (landing_url.length > 35) {
             if (!validateState(landing_url)) {
                 // ERROR: INVALID STATE
-                window.location = 'https://musicmetrics.app/'
+                //window.location = 'https://musicmetrics.app/'
             }
             storeAuthInfo(landing_url)
             if (sessionStorage.getItem('error') != null) {
