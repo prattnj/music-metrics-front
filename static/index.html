@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Music Metrics</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+  <script src="script.js"></script>
+  <style>
+    body, html {
+      height: 100%;
+      font-family: "Arial", sans-serif;
+      background-color: #1a1e1f;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Title / Logo -->
+<div class="nav">
+  <div class="logo">
+    <b>MUSIC METR<span onclick="console.log(sessionStorage)">I</span>CS</b>
+  </div>
+</div>
+
+<!-- Empty Space -->
+<div style="height: 150px; width: 100%"></div>
+
+<!-- Login to Spotify Button -->
+<div class="login-button-wrapper">
+  <div class="login-button" onclick="authenticate()">
+    <b>LOGIN TO SPOTIFY</b>
+  </div>
+</div>
+
+<script>
+  // Stores the user's access token from Spotify (which defaults to being stored in the URL) and reloads
+  window.onload = function () {
+    let landing_url = window.location.href
+    if (landing_url.length > 50) {
+      if (!validateState(landing_url)) {
+        // todo put up error html page (state not valid)
+        console.log('ERROR: INVALID STATE')
+      }
+      storeAuthInfo(landing_url)
+      // todo redirect to successfully authenticated stats page
+      window.location = 'https://musicmetrics.app/'
+    }
+  }
+</script>
+
+</body>
+</html>

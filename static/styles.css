@@ -1,0 +1,41 @@
+.test-border {
+    border: red 2px solid;
+}
+
+.nav {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #1a1e1f;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.logo {
+    color: #3de2ff;
+    font-size: 48px;
+}
+
+.login-button-wrapper {
+    width: 100%;
+    text-align: center;
+}
+
+.login-button {
+    background-color: #cce2e6;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    color: #222222;
+}
+
+.login-button:hover {
+    background-color: #168B3F;
+    color: #bbbbbb;
+    cursor: pointer;
+}
