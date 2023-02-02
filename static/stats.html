@@ -29,6 +29,9 @@
             if (sessionStorage.getItem('error') != null) {
                 // FAILURE (user did not log in)
                 window.location = 'https://musicmetrics.app/'
+            } else {
+                // SUCCESS (user logged in)
+                window.location = 'https://musicmetrics.app/stats/'
             }
         } else {
             // Attempt to navigate directly to stats page
