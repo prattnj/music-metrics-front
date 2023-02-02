@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Music Metrics - Stats</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <script src="script.js"></script>
+    <style>
+        body, html {
+            height: 100%;
+            font-family: "Arial", sans-serif;
+            background-color: #1a1e1f;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    // Stores the user's access token from Spotify (which defaults to being stored in the URL) and reloads
+    window.onload = function () {
+        let landing_url = window.location.href
+        if (landing_url.length > 35) {
+            if (!validateState(landing_url)) {
+                // ERROR: INVALID STATE
+                window.location = 'https://musicmetrics.app/'
+            }
+            storeAuthInfo(landing_url)
+            if (sessionStorage.getItem('error') != null) {
+                // FAILURE (user did not log in)
+                window.location = 'https://musicmetrics.app/'
+            }
+        } else {
+            // Attempt to navigate directly to stats page
+            window.location = 'https://musicmetrics.app/'
+        }
+
+    }
+</script>
+
+</body>
+</html>

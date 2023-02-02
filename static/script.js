@@ -560,7 +560,7 @@ function validatePhone(number) {
 function authenticate() {
 
     let client_id = '8b99139c99794d4b9e89b8367b0ac3f4'
-    let redirect_uri = 'https://musicmetrics.app/'
+    let redirect_uri = 'https://musicmetrics.app/stats/'
     let state = Math.floor(Math.random() * 10000000) // random 7 digit number
     sessionStorage.setItem('state', state.toString())
     let scope = 'user-read-playback-state ' +

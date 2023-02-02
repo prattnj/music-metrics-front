@@ -19,7 +19,7 @@
 <!-- Title / Logo -->
 <div class="nav">
   <div class="logo">
-    <b>MUSIC METR<span onclick="console.log(sessionStorage)">I</span>CS</b>
+    <b>music metr<span onclick="console.log(sessionStorage)">i</span>cs</b>
   </div>
 </div>
 
@@ -34,19 +34,7 @@
 </div>
 
 <script>
-  // Stores the user's access token from Spotify (which defaults to being stored in the URL) and reloads
-  window.onload = function () {
-    let landing_url = window.location.href
-    if (landing_url.length > 50) {
-      if (!validateState(landing_url)) {
-        // todo put up error html page (state not valid)
-        console.log('ERROR: INVALID STATE')
-      }
-      storeAuthInfo(landing_url)
-      // todo redirect to successfully authenticated stats page
-      window.location = 'https://musicmetrics.app/'
-    }
-  }
+
 </script>
 
 </body>
