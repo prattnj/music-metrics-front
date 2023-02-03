@@ -7,17 +7,12 @@
     z-index: 1;
     top: 0;
     left: 0;
-    padding: 30px;
+    padding: 10px;
 
     display: flex;
     flex-direction: row;
     justify-content: start;
 
-}
-
-.logo {
-    color: #3de2ff;
-    font-size: 48px;
 }
 
 .login-button-wrapper {
@@ -34,7 +29,7 @@
 }
 
 .login-button:hover {
-    background-color: #168B3F;
-    color: #bbbbbb;
+    background-color: #1db954;
+    color: #cce2e6;
     cursor: pointer;
 }
