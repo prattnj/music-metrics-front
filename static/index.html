@@ -19,12 +19,26 @@
 </head>
 <body>
 
-<!-- Title / Logo -->
-<div class="nav">
+<!-- Title / Logo / Navigation -->
+<header class="nav">
     <div class="logo">
-        <img src="logo.png" alt="Image not available." style="height: 50px">
+        <img onclick="window.location.href='https://musicmetrics.app/'" src="logo.png" alt="Image not available." style="height: 50px">
     </div>
-</div>
+    <div class="nav-buttons default-text-color">
+        <div onclick="window.location.href='https://musicmetrics.app/'" class="nav-button">
+            HOME
+        </div>
+        <div onclick="window.location.href='https://musicmetrics.app/about/'" class="nav-button">
+            ABOUT
+        </div>
+        <div onclick="window.location.href='https://musicmetrics.app/contact/'" class="nav-button">
+            CONTACT
+        </div>
+        <div onclick="window.location.href='https://musicmetrics.app/account/'" class="nav-button">
+            ACCOUNT
+        </div>
+    </div>
+</header>
 
 <!-- Login to Spotify Button -->
 <div class="login-button-wrapper">
