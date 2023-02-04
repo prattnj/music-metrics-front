@@ -13,16 +13,16 @@
 }
 
 .login-button {
-    background-color: #cce2e6;
+    background-color: #1db954;
     padding: 10px;
     border-radius: 10px;
     display: inline-block;
-    color: #1a1e1f;
+    color: #cce2e6;
 }
 
 .login-button:hover {
-    background-color: #1db954;
-    color: #cce2e6;
+    background-color: #cce2e6;
+    color: #1a1e1f;
     cursor: pointer;
 }
 
