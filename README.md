@@ -22,7 +22,3 @@ You probably have listened to music once or twice. Have you ever wondered what y
 * Domain: musicmetrics.app
 * Elastic IP: 3.13.23.247
 * SSH into EC2 server: ssh -i id_rsa.pem ubuntu@musicmetrics.app
-
-## What I've Learned (for HTML Simon assignment)
-
-Throughout this unit, I have learned a lot more about HTML despite already knowing a decent amount. For example, I have never embedded videos in a webpage that way before. Additionally, I learned more about the various options we have for inputting information and even displaying that information, using elements like tables.
