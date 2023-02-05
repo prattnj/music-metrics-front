@@ -22,19 +22,19 @@
 <!-- Title / Logo / Navigation -->
 <header class="nav">
     <div class="logo">
-        <img onclick="window.location.href='https://musicmetrics.app/'" src="logo.png" alt="Image not available." class="logo-primary">
+        <img onclick="window.location.href='https://dev.musicmetrics.app/'" src="logo.png" alt="Image not available." class="logo-primary">
     </div>
     <div class="nav-buttons default-text-color">
-        <div onclick="window.location.href='https://musicmetrics.app/'" class="nav-button">
+        <div onclick="window.location.href='https://dev.musicmetrics.app/'" class="nav-button">
             HOME
         </div>
-        <div onclick="window.location.href='https://musicmetrics.app/about/'" class="nav-button">
+        <div onclick="window.location.href='https://dev.musicmetrics.app/about/'" class="nav-button">
             ABOUT
         </div>
-        <div onclick="window.location.href='https://musicmetrics.app/contact/'" class="nav-button">
+        <div onclick="window.location.href='https://dev.musicmetrics.app/contact/'" class="nav-button">
             CONTACT
         </div>
-        <div onclick="window.location.href='https://musicmetrics.app/account/'" class="nav-button">
+        <div onclick="window.location.href='https://dev.musicmetrics.app/account/'" class="nav-button">
             ACCOUNT
         </div>
     </div>
@@ -60,19 +60,19 @@
         if (landing_url.length > 35) {
             if (!validateState(landing_url)) {
                 // ERROR: INVALID STATE
-                window.location = 'https://musicmetrics.app/'
+                window.location = 'https://dev.musicmetrics.app/'
             }
             storeAuthInfo(landing_url)
             if (sessionStorage.getItem('error') != null) {
                 // FAILURE (user did not log in)
-                window.location = 'https://musicmetrics.app/'
+                window.location = 'https://dev.musicmetrics.app/'
             } else {
                 // SUCCESS (user logged in)
-                window.location = 'https://musicmetrics.app/stats/'
+                window.location = 'https://dev.musicmetrics.app/stats/'
             }
         } else {
             // Attempt to navigate directly to stats page
-            if (sessionStorage.getItem("access_token") == null) window.location = 'https://musicmetrics.app/'
+            if (sessionStorage.getItem("access_token") == null) window.location = 'https://dev.musicmetrics.app/'
         }
 
     }
