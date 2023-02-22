@@ -18,10 +18,9 @@ You probably have listened to music once or twice. Have you ever wondered what y
 
 ## Useful Information
 
-* EC2 instance: t3.nano running on us-east-2
+* Host: Dell Optiplex 9010 running Ubuntu 22.04
+* Hostname: Tommy
 * Domain: musicmetrics.app
-* Elastic IP: 3.13.23.247
-* SSH into EC2 server: ssh -i id_rsa.pem ubuntu@musicmetrics.app
 
 ## What I Learned (Simon - HTML portion):
 
