@@ -72,6 +72,9 @@
                 window.location = 'https://dev.musicmetrics.app/stats/'
             } else {
                 // SUCCESS (user logged in)
+                const oldUrl = new URL(window.location.href)
+                oldUrl.search = ''
+                window.history.replaceState(null, null, oldUrl.href)
                 showStats()
             }
         }
