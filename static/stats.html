@@ -76,6 +76,7 @@
                 const oldUrl = new URL(window.location.href)
                 oldUrl.search = ''
                 window.history.replaceState(null, null, oldUrl.href)
+                console.log('User logged in successfully 2.')
                 showStats()
             }
         }
