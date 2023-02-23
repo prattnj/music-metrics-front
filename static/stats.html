@@ -72,6 +72,7 @@
                 window.location = 'https://dev.musicmetrics.app/stats/'
             } else {
                 // SUCCESS (user logged in)
+                console.log('User logged in successfully.')
                 const oldUrl = new URL(window.location.href)
                 oldUrl.search = ''
                 window.history.replaceState(null, null, oldUrl.href)
