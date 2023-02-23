@@ -27,6 +27,8 @@ function authenticate() {
 
 }
 
+function showStats() {}
+
 function storeAuthInfo(url) {
     url = url.replace('#', '?')
 

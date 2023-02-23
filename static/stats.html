@@ -46,6 +46,13 @@
 
 </div>
 
+<!-- Login to Spotify Button -->
+<div class="login-button-wrapper">
+    <div class="login-button" onclick="authenticate()">
+        <b>LOGIN TO SPOTIFY</b>
+    </div>
+</div>
+
 <footer class="footer default-text-color">
     <p>Copyright © 2023 Noah Pratt • <a href="https://dev.musicmetrics.app/contact/">Contact</a> • <a href="https://dev.musicmetrics.app/about/">About</a></p>
 </footer>
@@ -57,19 +64,16 @@
         if (landing_url.length > 35) {
             if (!validateState(landing_url)) {
                 // ERROR: INVALID STATE
-                window.location = 'https://dev.musicmetrics.app/'
+                window.location = 'https://dev.musicmetrics.app/stats/'
             }
             storeAuthInfo(landing_url)
             if (sessionStorage.getItem('error') != null) {
                 // FAILURE (user did not log in)
-                window.location = 'https://dev.musicmetrics.app/'
+                window.location = 'https://dev.musicmetrics.app/stats/'
             } else {
                 // SUCCESS (user logged in)
-                window.location = 'https://dev.musicmetrics.app/stats/'
+                showStats()
             }
-        } else {
-            // Attempt to navigate directly to stats page
-            if (sessionStorage.getItem("access_token") == null) window.location = 'https://dev.musicmetrics.app/'
         }
 
     }
