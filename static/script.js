@@ -27,7 +27,7 @@ function authenticate() {
 
 }
 
-function showStats() {}
+function showStats() {} // git test, delete me
 
 function storeAuthInfo(url) {
     url = url.replace('#', '?')
