@@ -9,6 +9,8 @@
     <script src="script.js"></script>
     <style>
         body, html {
+            display: flex;
+            flex-direction: column;
             height: 100%;
             font-family: "Arial", sans-serif;
             background-image: linear-gradient(#1a1e1f, black);
@@ -37,15 +39,30 @@
     </div>
 </header>
 
-<!-- whole page -->
-<div class="page-bulk">
+<!-- Primary Text -->
+<div class="primary-info">
+    <b>Unleash the power of your playlist.</b>
+</div>
 
-    <div class="primary-info">
-        <p><b>Unleash the power of your playlist.</b></p>
+<!-- 3 Tiles -->
+<div class="landing-info">
+
+    <div class="landing-tile">
+        <img src="stats.png" alt="Image not available." class="landing-image">
+        <div class="landing-tile-text">See in-depth stats about all your listening habits.</div>
+    </div>
+    <div class="landing-tile">
+        <img src="playlist.png" alt="Image not available." class="landing-image">
+        <div class="landing-tile-text">Get custom playlists recommended based on your stats.</div>
+    </div>
+    <div class="landing-tile">
+        <img src="social.png" alt="Image not available." class="landing-image">
+        <div class="landing-tile-text">Share your fun facts with all your friends any time.</div>
     </div>
 
 </div>
 
+<!-- Footer -->
 <footer class="footer default-text-color">
     <p>Copyright © (pending) 2023 Noah Pratt • <a href="https://dev.musicmetrics.app/contact/">Contact</a> • <a href="https://dev.musicmetrics.app/about/">About</a></p>
 </footer>
