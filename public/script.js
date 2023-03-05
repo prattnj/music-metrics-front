@@ -17,7 +17,7 @@ function authenticate() {
         'user-library-read'
 
     let url = 'https://accounts.spotify.com/authorize'
-    url += '?response_type=token'
+    url += '?response_type=code'
     url += '&client_id=' + encodeURIComponent(client_id)
     url += '&scope=' + encodeURIComponent(scope)
     url += '&redirect_uri=' + encodeURIComponent(redirect_uri)
@@ -27,7 +27,7 @@ function authenticate() {
 
 }
 
-function showStats() {} // git test, delete me
+function showStats() {}
 
 function storeAuthInfo(url) {
     url = url.replace('#', '?')
