@@ -1,7 +1,7 @@
 function authenticate() {
 
     let client_id = '8b99139c99794d4b9e89b8367b0ac3f4'
-    let redirect_uri = 'https://dev.musicmetrics.app/stats/'
+    let redirect_uri = 'https://dev.musicmetrics.app/stats'
     let state = Math.floor(Math.random() * 100000000) // random 8 digit number
     sessionStorage.setItem('state', state.toString())
     let scope = 'user-read-playback-state ' +
