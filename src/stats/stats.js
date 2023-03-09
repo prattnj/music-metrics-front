@@ -1,5 +1,40 @@
-function authenticate() {
+import './stats.css';
+import {PrimaryInfo} from "../util/util";
 
+function Stats() {
+    onload()
+    return (
+        <div>
+            <PrimaryInfo text="Stats central."/>
+            <div className='login-button-wrapper'>
+                <div className='login-button' onClick={() => authenticate()}>
+                    <b>LOGIN TO SPOTIFY</b>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+function onload() {
+    let landing_url = window.location.href
+    if (landing_url.length > 35) {
+        if (!validateState(landing_url)) {
+            // ERROR: INVALID STATE
+            window.location = 'https://dev.musicmetrics.app/stats'
+        }
+        storeAuthInfo(landing_url)
+        if (sessionStorage.getItem('error') != null) {
+            // FAILURE (user did not log in)
+            window.location = 'https://dev.musicmetrics.app/stats'
+        } else {
+            // SUCCESS (user logged in)
+            window.location = 'https://dev.musicmetrics.app/stats'
+            showStats()
+        }
+    }
+}
+
+function authenticate() {
     let client_id = '8b99139c99794d4b9e89b8367b0ac3f4'
     let redirect_uri = 'https://dev.musicmetrics.app/stats'
     let state = Math.floor(Math.random() * 100000000) // random 8 digit number
@@ -24,10 +59,7 @@ function authenticate() {
     url += '&state=' + encodeURIComponent(state)
 
     window.location = url;
-
 }
-
-function showStats() {}
 
 function storeAuthInfo(url) {
     url = url.replace('#', '?')
@@ -55,3 +87,7 @@ function validateState(url) {
     if (!urlParams.has('state') || stored_state == null) return false;
     return stored_state === urlParams.get('state')
 }
+
+function showStats() {}
+
+export {Stats};

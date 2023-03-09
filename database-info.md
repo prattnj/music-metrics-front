@@ -1,4 +1,0 @@
-# Music Metrics Database Information
-
----
-
