@@ -18,7 +18,7 @@ class RegisterForm extends React.Component {
                     <div className='login-button' onClick={() => this.validate()}>REGISTER</div>
                     <GoogleLogin
                         clientId="186887527754-vjcubupfn2f9vsf46qrtiflak8vnqii0.apps.googleusercontent.com"
-                        buttonText="Continue with Google"
+                        buttonText="Continue with Google - test"
                         onSuccess={this.responseGoogle}
                         onFailure={this.responseGoogle}
                         cookiePolicy={'single_host_origin'}
