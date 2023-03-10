@@ -69,12 +69,8 @@ function storeAuthInfo(url) {
 
     if (!urlParams.has('state')) return;
     if (!urlParams.has('error')) {
-        const access_token = urlParams.get('access_token')
-        const token_type = urlParams.get('token_type')
-        const expires_in = urlParams.get('expires_in')
-        sessionStorage.setItem('access_token', access_token)
-        sessionStorage.setItem('token_type', token_type)
-        sessionStorage.setItem('expires_in', expires_in)
+        const code = urlParams.get('code')
+        sessionStorage.setItem('code', code)
     } else {
         const error = urlParams.get('error')
         sessionStorage.setItem('error', error)
