@@ -13,6 +13,10 @@ function Register() {
                 <input type="password" placeholder="Confirm password" className="login-input"/>
                 <input type="text" placeholder="Email" className="login-input"/>
             </div>
+            <div className='register-options'>
+                <div className='login-button'>REGISTER</div>
+                <div className='login-button'>Sign in with Google</div>
+            </div>
         </div>
     )
 }
