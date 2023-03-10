@@ -16,6 +16,7 @@ function Stats() {
 }
 
 function onload() {
+    console.log('onload')
     let landing_url = window.location.href
     if (landing_url.length > 35) {
         if (!validateState(landing_url)) {
