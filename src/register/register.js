@@ -22,7 +22,7 @@ class RegisterForm extends React.Component {
                         onSuccess={this.responseGoogle}
                         onFailure={this.responseGoogle}
                         cookiePolicy={'single_host_origin'}
-                        className={'google-login-button'}
+                        className='google-login-button'
                     />
                 </div>
             </div>
