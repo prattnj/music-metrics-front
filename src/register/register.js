@@ -20,7 +20,7 @@ class RegisterForm extends React.Component {
                     <GoogleLogin
                         clientId="186887527754-vjcubupfn2f9vsf46qrtiflak8vnqii0.apps.googleusercontent.com"
                         render={renderProps => (
-                            <GoogleButton type={'dark'} onClick={renderProps.onClick} disabled={renderProps.disabled}/>
+                            <GoogleButton type={'light'} onClick={renderProps.onClick} disabled={renderProps.disabled}/>
                         )}
                         onSuccess={this.responseGoogle}
                         onFailure={this.responseGoogle}
