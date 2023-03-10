@@ -1,10 +1,19 @@
 import './playlist.css';
-import {PrimaryInfo} from "../util/util";
+import {getToken, LoginForm, PrimaryInfo} from "../util/util";
 
 export function Playlist() {
-    return (
-        <div>
-            <PrimaryInfo text="🚧Playlist Builder🚧"/>
-        </div>
-    )
+    if (getToken() == null) {
+        return (
+            <div>
+                <PrimaryInfo text="Log in to use playlist builder..."/>
+                <LoginForm/>
+            </div>
+        )
+    } else {
+        return (
+            <div>
+                <PrimaryInfo text="🚧Playlist Builder🚧"/>
+            </div>
+        )
+    }
 }
