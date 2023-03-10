@@ -83,7 +83,8 @@ function LoginWithGoogle() {
         />
     )*/
     return (
-        <GoogleLogin onSuccess={() => responseGoogle('success')} onError={() => responseGoogle('error')}/>
+        /*<GoogleLogin onSuccess={() => responseGoogle('success')} onError={() => responseGoogle('error')}/>*/
+        <GoogleLogin/>
     )
 }
 
