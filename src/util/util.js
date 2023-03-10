@@ -37,7 +37,7 @@ function Footer() {
     return (
         <footer className="footer default-text-color">
             <p>
-                Copyright &copy; (pending) <span onClick={console.log(sessionStorage)}>2023</span> Noah Pratt &#8226;
+                Copyright &copy; (pending) <span onClick={() => console.log(sessionStorage)}>2023</span> Noah Pratt &#8226;
                 <Link to={"/privacy"} className='custom-link'> Privacy Policy</Link> &#8226;
                 <Link to={"/terms"} className='custom-link'> Terms of Service</Link> &#8226;
                 <Link to={"/about"} className='custom-link'> About</Link> &#8226;
