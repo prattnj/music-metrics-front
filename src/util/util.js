@@ -56,6 +56,15 @@ function PrimaryInfo(props) {
     )
 }
 
+function LoginForm() {
+    return (
+        <div className='login-input-wrapper'>
+            <input type="text" placeholder="Username" className="login-input"/>
+            <input type="password" placeholder="Password" className="login-input"/>
+        </div>
+    )
+}
+
 function getToken() {
     return localStorage.getItem('token');
 }
@@ -63,3 +72,5 @@ function getToken() {
 export {Header};
 export {Footer};
 export {PrimaryInfo};
+export {LoginForm};
+export {getToken};

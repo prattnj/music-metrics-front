@@ -1,18 +1,23 @@
 import './stats.css';
-import {PrimaryInfo} from "../util/util";
+import {getToken, LoginForm, PrimaryInfo} from "../util/util";
 
 function Stats() {
     onload()
-    return (
-        <div>
-            <PrimaryInfo text="Stats central."/>
-            <div className='login-button-wrapper'>
-                <div className='login-button' onClick={() => authenticate()}>
-                    <b>LOGIN TO SPOTIFY</b>
+    if (getToken() == null) {
+        return <LoginForm />
+    } else {
+        return (
+            <div>
+                <PrimaryInfo text="Stats central."/>
+                <div className='login-button-wrapper'>
+                    <div className='login-button' onClick={() => authenticate()}>
+                        <b>LOGIN TO SPOTIFY</b>
+                    </div>
                 </div>
             </div>
-        </div>
-    )
+        )
+    }
+
 }
 
 function onload() {

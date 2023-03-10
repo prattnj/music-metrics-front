@@ -1,12 +1,17 @@
 import './account.css';
-import {PrimaryInfo} from "../util/util";
+import {getToken, LoginForm, PrimaryInfo} from "../util/util";
 
 function Account() {
-    return (
-        <div>
-            <PrimaryInfo text="🚧Account Information🚧"/>
-        </div>
-    )
+    if (getToken() == null) {
+        return <LoginForm />
+    } else {
+        return (
+            <div>
+                <PrimaryInfo text="🚧Account Information🚧"/>
+            </div>
+        )
+    }
+
 }
 
 export {Account};

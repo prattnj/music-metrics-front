@@ -17,6 +17,20 @@
     font-size: 18px;
 }
 
+.login-input {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    margin: 10px;
+    font-size: 18px;
+}
+
+.login-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
 .logo-primary {
     height: 50px;
 }
