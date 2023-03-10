@@ -1,9 +1,9 @@
 import './register.css';
 import {PrimaryInfo} from "../util/util";
 
-function Register() {
-    return (
-        <div>
+class RegisterForm extends React.Component {
+    render() {
+        return (<div>
             <PrimaryInfo text="Create a Music Metrics account"/>
             <div className='login-input-wrapper'>
                 <input type="text" placeholder="First name" className="login-input"/>
@@ -13,13 +13,16 @@ function Register() {
                 <input type="password" placeholder="Confirm password" className="login-input"/>
                 <input type="text" placeholder="Email" className="login-input"/>
                 <div className='register-options'>
-                    <div className='login-button'>REGISTER</div>
+                    <div className='login-button' onClick={() => this.validate()}>REGISTER</div>
                     <div className='login-button'>Sign in with Google</div>
                 </div>
             </div>
+        </div>)
+    }
 
-        </div>
-    )
+    validate() {
+        // todo
+    }
 }
 
-export {Register};
+export {RegisterForm};
