@@ -84,6 +84,7 @@ function LoginWithGoogle() {
     )*/
     return (
         <>
+            <script src="https://accounts.google.com/gsi/client" async defer></script>
             <div id="g_id_onload"
                  data-client_id="YOUR_GOOGLE_CLIENT_ID"
                  data-login_uri="https://your.domain/your_login_endpoint"
