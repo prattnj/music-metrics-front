@@ -18,11 +18,13 @@
 }
 
 .login-input {
+    background-color: #2a2e2f;
     padding: 10px;
     border-radius: 10px;
     border: none;
     margin: 10px;
     font-size: 18px;
+    width: 200px;
 }
 
 .login-input-wrapper {

@@ -12,6 +12,9 @@ Main-
 Dark
 #1a1e1f
 
+Less Dark
+#2a2e2f
+
 Light
 #cce2e6
 
