@@ -13,25 +13,29 @@ import {Account} from "./account/account";
 import {About} from "./about/about";
 import {Contact} from "./contact/contact";
 import {RegisterForm} from "./register/register";
+import {GoogleOAuthProvider} from "@react-oauth/google";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-  <BrowserRouter>
-    <Header />
-      <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/stats" element={<Stats />} />
-          <Route path="/account" element={<Account />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/register" element={<RegisterForm />} />
-          <Route path="*" element={<NotFound />} />
-      </Routes>
-    <Footer />
-  </BrowserRouter>
+    <GoogleOAuthProvider clientId={}>
+        <BrowserRouter>
+            <Header />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/stats" element={<Stats />} />
+                <Route path="/account" element={<Account />} />
+                <Route path="/privacy" element={<Privacy />} />
+                <Route path="/terms" element={<Terms />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/register" element={<RegisterForm />} />
+                <Route path="*" element={<NotFound />} />
+            </Routes>
+            <Footer />
+        </BrowserRouter>
+    </GoogleOAuthProvider>
+
 );
 
 // If you want to start measuring performance in your app, pass a function
