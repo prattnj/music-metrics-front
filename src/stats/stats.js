@@ -4,7 +4,10 @@ import {getToken, LoginForm, PrimaryInfo} from "../util/util";
 function Stats() {
     onload()
     if (getToken() == null) {
-        return <LoginForm />
+        return (<div>
+            <PrimaryInfo text="Log in to continue to stats"/>
+            <LoginForm/>
+        </div>)
     } else {
         return (
             <div>
