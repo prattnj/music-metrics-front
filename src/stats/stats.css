@@ -4,6 +4,7 @@
     border-radius: 10px;
     display: inline-block;
     color: #cce2e6;
+    margin: 10px;
 }
 
 .login-button:hover {
