@@ -2,6 +2,7 @@ import React from 'react';
 import './register.css';
 import {PrimaryInfo} from "../util/util";
 import {GoogleLogin} from "react-google-login";
+import GoogleButton from "react-google-button";
 
 class RegisterForm extends React.Component {
     render() {
@@ -18,11 +19,12 @@ class RegisterForm extends React.Component {
                     <div className='login-button' onClick={() => this.validate()}>REGISTER</div>
                     <GoogleLogin
                         clientId="186887527754-vjcubupfn2f9vsf46qrtiflak8vnqii0.apps.googleusercontent.com"
-                        buttonText="Continue with Google"
+                        render={renderProps => (
+                            <GoogleButton onClick={renderProps.onClick} disabled={renderProps.disabled}>Sign in with Google</GoogleButton>
+                        )}
                         onSuccess={this.responseGoogle}
                         onFailure={this.responseGoogle}
                         cookiePolicy={'single_host_origin'}
-                        className="google-login-button"
                     />
                 </div>
             </div>
