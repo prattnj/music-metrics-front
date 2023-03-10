@@ -5,7 +5,7 @@ function Account() {
     if (getToken() == null) {
         return (
             <div>
-                <PrimaryInfo text="Log in to continue to account..."/>
+                <PrimaryInfo text="Log in to see account info..."/>
                 <LoginForm/>
             </div>
         )

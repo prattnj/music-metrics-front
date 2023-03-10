@@ -61,6 +61,7 @@ function LoginForm() {
         <div className='login-input-wrapper'>
             <input type="text" placeholder="Username" className="login-input"/>
             <input type="password" placeholder="Password" className="login-input"/>
+            <p>Don't have an account? <Link to={'/register'}>Create one</Link></p>
         </div>
     )
 }

@@ -12,6 +12,7 @@ import {Terms} from "./terms/terms";
 import {Account} from "./account/account";
 import {About} from "./about/about";
 import {Contact} from "./contact/contact";
+import {Register} from "./register/register";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -26,6 +27,7 @@ root.render(
           <Route path="/terms" element={<Terms />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/register" element={<Register />} />
           <Route path="*" element={<NotFound />} />
       </Routes>
     <Footer />
