@@ -2,7 +2,7 @@ import React from 'react';
 import './register.css';
 import {LoginWithGoogle, PrimaryInfo} from "../util/util";
 
-class RegisterForm extends React.Component {
+export class RegisterForm extends React.Component {
     render() {
         return (<div>
             <PrimaryInfo text="Create a Music Metrics account"/>
@@ -13,10 +13,8 @@ class RegisterForm extends React.Component {
                 <input type="password" placeholder="Password" className="login-input"/>
                 <input type="password" placeholder="Confirm password" className="login-input"/>
                 <input type="text" placeholder="Email" className="login-input"/>
-                <div className='register-options'>
-                    <div className='login-button' onClick={() => this.validate()}>REGISTER</div>
-                    <LoginWithGoogle/>
-                </div>
+                <div className='login-button' onClick={() => this.validate()}>Create your free account</div>
+                <LoginWithGoogle/>
             </div>
         </div>)
     }
@@ -25,9 +23,4 @@ class RegisterForm extends React.Component {
         // todo
     }
 
-    responseGoogle(response) {
-        console.log(response)
-    }
 }
-
-export {RegisterForm};

@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import React from "react";
 import { GoogleLogin } from '@react-oauth/google';
 
-function Header() {
+export function Header() {
     return (
         <header className="nav">
             <div>
@@ -36,7 +36,7 @@ function NavButton(props) {
     )
 }
 
-function Footer() {
+export function Footer() {
     return (
         <footer className="footer default-text-color">
             <p>
@@ -51,7 +51,7 @@ function Footer() {
     )
 }
 
-function PrimaryInfo(props) {
+export function PrimaryInfo(props) {
     return (
         <div className="primary-info">
             <b>{props.text}</b>
@@ -59,18 +59,18 @@ function PrimaryInfo(props) {
     )
 }
 
-function LoginForm() {
+export function LoginForm() {
     return (
         <div className='login-input-wrapper'>
             <input type="text" placeholder="Username" className="login-input"/>
             <input type="password" placeholder="Password" className="login-input"/>
-            <p className={'default-text-color'}>Don't have an account? <Link to={'/register'} className={'custom-link'}><u>Create one</u></Link> OR</p>
+            <p className={'default-text-color'}>Don't have an account? <Link to={'/register'} className={'custom-link'}><u>Create one</u></Link> or</p>
             <LoginWithGoogle/>
         </div>
     )
 }
 
-function LoginWithGoogle() {
+export function LoginWithGoogle() {
 
     const responseMessage = (response) => {
         console.log(response);
@@ -84,17 +84,6 @@ function LoginWithGoogle() {
     )
 }
 
-function getToken() {
+export function getToken() {
     return localStorage.getItem('token');
 }
-
-function responseGoogle(response) {
-    console.log(response)
-}
-
-export {Header};
-export {Footer};
-export {PrimaryInfo};
-export {LoginForm};
-export {getToken};
-export {LoginWithGoogle};

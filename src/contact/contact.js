@@ -1,12 +1,10 @@
 import './contact.css'
 import {PrimaryInfo} from "../util/util";
 
-function Contact() {
+export function Contact() {
     return (
         <div>
             <PrimaryInfo text="🚧Contact Us🚧"/>
         </div>
     )
 }
-
-export {Contact};

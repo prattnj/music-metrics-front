@@ -1,7 +1,7 @@
 import './stats.css';
 import {getToken, LoginForm, PrimaryInfo} from "../util/util";
 
-function Stats() {
+export function Stats() {
     onload()
     if (getToken() == null) {
         return (<div>
@@ -94,5 +94,3 @@ function validateState(url) {
 }
 
 function showStats() {}
-
-export {Stats};

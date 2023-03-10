@@ -1,4 +1,4 @@
-.google-login-button {
+/*.google-login-button {
     background-color: #4285f4;
     color: white;
     border: none;
@@ -11,7 +11,7 @@
 
 .google-login-button:hover {
     background-color: #357ae8;
-}
+}*/
 
 .register-options {
     display: flex;

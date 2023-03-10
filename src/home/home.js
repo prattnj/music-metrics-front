@@ -5,14 +5,14 @@ import stats from './stats.png';
 import {PrimaryInfo} from '../util/util';
 import {Link} from "react-router-dom";
 
-function Home() {
+export function Home() {
     return (
         <div>
             <PrimaryInfo text="Unleash the power of your playlist."/>
             <div className='landing-info'>
-                <Link to={"/stats"}><LandingTile image={stats} text="See in-depth stats about all your listening habits."/></Link>
-                <LandingTile image={playlist} text="Get custom playlists recommended based on your stats."/>
-                <LandingTile image={social} text="Share your fun facts with all your friends any time."/>
+                <Link to={"/stats"} className={'custom-link'}><LandingTile image={stats} text="See in-depth stats about all your listening habits."/></Link>
+                <Link to={"/playlist"} className={'custom-link'}><LandingTile image={playlist} text="Get custom playlists recommended based on your stats."/></Link>
+                <Link to={"/social"} className={'custom-link'}><LandingTile image={social} text="Share your fun facts with all your friends any time."/></Link>
             </div>
         </div>
     )
@@ -29,4 +29,3 @@ function LandingTile(props) {
     )
 }
 
-export default Home;
