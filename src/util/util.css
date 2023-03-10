@@ -37,12 +37,12 @@
     align-items: center;
 }
 
-.login-last-row {
+/*.login-last-row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 350px;
-}
+}*/
 
 .logo-primary {
     height: 50px;

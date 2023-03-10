@@ -64,8 +64,8 @@ function LoginForm() {
         <div className='login-input-wrapper'>
             <input type="text" placeholder="Username" className="login-input"/>
             <input type="password" placeholder="Password" className="login-input"/>
-            <p className={'default-text-color'}>Don't have an account? <Link to={'/register'} className={'custom-link'}><u>Create one</u></Link></p>
-            <div className={'login-last-row'}><p className={'default-text-color'}>OR</p><LoginWithGoogle/></div>
+            <p className={'default-text-color'}>Don't have an account? <Link to={'/register'} className={'custom-link'}><u>Create one</u></Link> OR</p>
+            <LoginWithGoogle/>
         </div>
     )
 }
