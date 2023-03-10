@@ -1,4 +1,4 @@
-import './register.css';
+import React from 'react';
 import {PrimaryInfo} from "../util/util";
 
 class RegisterForm extends React.Component {
