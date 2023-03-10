@@ -1,4 +1,4 @@
-//import './stats.css';
+import './stats.css';
 import {getToken, LoginForm, PrimaryInfo} from "../util/util";
 
 function Stats() {
