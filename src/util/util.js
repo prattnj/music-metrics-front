@@ -3,7 +3,7 @@ import logo from './logo.png';
 import {Link} from 'react-router-dom';
 
 import React from "react";
-import GoogleLogin from "@react-oauth/google";
+import { GoogleLogin } from '@react-oauth/google';
 
 function Header() {
     return (
@@ -71,19 +71,16 @@ function LoginForm() {
 }
 
 function LoginWithGoogle() {
-    /*return (
-        <GoogleLogin
-            clientId="186887527754-vjcubupfn2f9vsf46qrtiflak8vnqii0.apps.googleusercontent.com"
-            render={renderProps => (
-                <GoogleButton type={'light'} onClick={renderProps.onClick} disabled={renderProps.disabled}/>
-            )}
-            onSuccess={responseGoogle}
-            onFailure={responseGoogle}
-            cookiePolicy={'single_host_origin'}
-        />
-    )*/
+
+    const responseMessage = (response) => {
+        console.log(response);
+    };
+    const errorMessage = (error) => {
+        console.log(error);
+    };
+
     return (
-        <GoogleLogin onSuccess={'responseMessage'} onError={'errorMessage'} />
+        <GoogleLogin onSuccess={() => responseMessage} onError={() => errorMessage} />
     )
 }
 
