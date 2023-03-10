@@ -5,7 +5,7 @@ function Stats() {
     onload()
     if (getToken() == null) {
         return (<div>
-            <PrimaryInfo text="Log in to continue to stats"/>
+            <PrimaryInfo text="Log in to continue to stats..."/>
             <LoginForm/>
         </div>)
     } else {
