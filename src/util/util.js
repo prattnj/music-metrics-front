@@ -40,11 +40,11 @@ export function Footer() {
     return (
         <footer className="footer default-text-color">
             <p>
-                Copyright &copy; (pending) <span onClick={() => console.log(sessionStorage)}>2023</span> Noah Pratt &#8226;
-                <Link to={"/privacy"} className='custom-link'> Privacy Policy</Link> &#8226;
-                <Link to={"/terms"} className='custom-link'> Terms of Service</Link> &#8226;
-                <Link to={"/about"} className='custom-link'> About</Link> &#8226;
-                <Link to={"/contact"} className='custom-link'> Contact Us</Link> &#8226;
+                Copyright &copy; (pending) <span onClick={() => console.log(sessionStorage)}>2023</span> Noah Pratt <span className={'text-color-white'}>&#8226;</span>
+                <Link to={"/privacy"} className='custom-link'> Privacy Policy</Link> <span className={'text-color-white'}>&#8226;</span>
+                <Link to={"/terms"} className='custom-link'> Terms of Service</Link> <span className={'text-color-white'}>&#8226;</span>
+                <Link to={"/about"} className='custom-link'> About</Link> <span className={'text-color-white'}>&#8226;</span>
+                <Link to={"/contact"} className='custom-link'> Contact Us</Link> <span className={'text-color-white'}>&#8226;</span>
                 <a href="https://github.com/prattnj/music-metrics-front" target='_blank' className='custom-link'> GitHub</a>
             </p>
         </footer>

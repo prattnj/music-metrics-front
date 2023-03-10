@@ -37,13 +37,6 @@
     align-items: center;
 }
 
-/*.login-last-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 350px;
-}*/
-
 .logo-primary {
     height: 50px;
 }
@@ -91,4 +84,8 @@
 
 .test-border {
     border: red 2px solid;
+}
+
+.text-color-white {
+    color: #cce2e6;
 }
