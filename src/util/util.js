@@ -1,6 +1,9 @@
 import './util.css';
 import logo from './logo.png';
 import {Link} from 'react-router-dom';
+import GoogleButton from "react-google-button";
+import {GoogleLogin} from "react-google-login";
+import React from "react";
 
 function Header() {
     return (
@@ -62,7 +65,22 @@ function LoginForm() {
             <input type="text" placeholder="Username" className="login-input"/>
             <input type="password" placeholder="Password" className="login-input"/>
             <p className={'default-text-color'}>Don't have an account? <Link to={'/register'} className={'custom-link'}><u>Create one</u></Link></p>
+            <div><p className={'default-text-color'}>OR</p><LoginWithGoogle/></div>
         </div>
+    )
+}
+
+function LoginWithGoogle() {
+    return (
+        <GoogleLogin
+            clientId="186887527754-vjcubupfn2f9vsf46qrtiflak8vnqii0.apps.googleusercontent.com"
+            render={renderProps => (
+                <GoogleButton type={'light'} onClick={renderProps.onClick} disabled={renderProps.disabled}/>
+            )}
+            onSuccess={responseGoogle}
+            onFailure={responseGoogle}
+            cookiePolicy={'single_host_origin'}
+        />
     )
 }
 
@@ -70,8 +88,13 @@ function getToken() {
     return localStorage.getItem('token');
 }
 
+function responseGoogle(response) {
+    console.log(response)
+}
+
 export {Header};
 export {Footer};
 export {PrimaryInfo};
 export {LoginForm};
 export {getToken};
+export {LoginWithGoogle};

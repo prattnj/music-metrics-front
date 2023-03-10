@@ -1,8 +1,6 @@
 import React from 'react';
 import './register.css';
-import {PrimaryInfo} from "../util/util";
-import {GoogleLogin} from "react-google-login";
-import GoogleButton from "react-google-button";
+import {LoginWithGoogle, PrimaryInfo} from "../util/util";
 
 class RegisterForm extends React.Component {
     render() {
@@ -17,15 +15,7 @@ class RegisterForm extends React.Component {
                 <input type="text" placeholder="Email" className="login-input"/>
                 <div className='register-options'>
                     <div className='login-button' onClick={() => this.validate()}>REGISTER</div>
-                    <GoogleLogin
-                        clientId="186887527754-vjcubupfn2f9vsf46qrtiflak8vnqii0.apps.googleusercontent.com"
-                        render={renderProps => (
-                            <GoogleButton type={'light'} onClick={renderProps.onClick} disabled={renderProps.disabled}/>
-                        )}
-                        onSuccess={this.responseGoogle}
-                        onFailure={this.responseGoogle}
-                        cookiePolicy={'single_host_origin'}
-                    />
+                    <LoginWithGoogle/>
                 </div>
             </div>
         </div>)
