@@ -13,7 +13,7 @@ export function Stats() {
         return (
             <div>
                 <PrimaryInfo text="Stats central."/>
-                <LoginButton text="LOGIN TO SPOTIFY" click={() => authenticate}/>
+                <LoginButton text="LOGIN TO SPOTIFY" click={() => authenticate()}/>
             </div>
         )
     }
