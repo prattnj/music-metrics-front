@@ -65,7 +65,7 @@ export function LoginForm() {
         <div className='login-input-wrapper'>
             <input type="text" placeholder="Username" className="login-input"/>
             <input type="password" placeholder="Password" className="login-input"/>
-            <LoginButton text={'LOGIN'} onclick={performLogin}/>
+            <LoginButton text={'LOGIN'} onclick=performLogin/>
             <p className={'default-text-color'}>Don't have an account? <Link to={'/register'} className={'custom-link'}><u>Create one</u></Link> or</p>
             <LoginWithGoogle/>
         </div>
