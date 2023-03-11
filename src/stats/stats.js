@@ -13,15 +13,21 @@ export function Stats() {
         return (
             <div>
                 <PrimaryInfo text="Stats central."/>
-                <div className='login-button-wrapper'>
-                    <div className='login-button' onClick={() => authenticate()}>
-                        <b>LOGIN TO SPOTIFY</b>
-                    </div>
-                </div>
+                <LoginButton text="LOGIN TO SPOTIFY"/>
             </div>
         )
     }
 
+}
+
+export function LoginButton(props) {
+    return (
+        <div className='login-button-wrapper'>
+            <div className='login-button' onClick={() => authenticate()}>
+                <b>{props.text}</b>
+            </div>
+        </div>
+    )
 }
 
 function onload() {

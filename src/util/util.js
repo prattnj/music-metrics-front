@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 
 import React from "react";
 import { GoogleLogin } from '@react-oauth/google';
+import {LoginButton} from "../stats/stats";
 
 export function Header() {
     return (
@@ -64,6 +65,7 @@ export function LoginForm() {
         <div className='login-input-wrapper'>
             <input type="text" placeholder="Username" className="login-input"/>
             <input type="password" placeholder="Password" className="login-input"/>
+            <LoginButton text={'LOGIN'} onClick={() => performLogin}/>
             <p className={'default-text-color'}>Don't have an account? <Link to={'/register'} className={'custom-link'}><u>Create one</u></Link> or</p>
             <LoginWithGoogle/>
         </div>
@@ -86,4 +88,8 @@ export function LoginWithGoogle() {
 
 export function getToken() {
     return localStorage.getItem('token');
+}
+
+function performLogin() {
+    // TODO
 }
