@@ -31,8 +31,6 @@ export function LoginButton(props) {
 }
 
 function onload() {
-    // todo: remove next line
-    localStorage.removeItem('token')
     console.log('onload')
     let landing_url = window.location.href
     if (landing_url.length > 35) {
