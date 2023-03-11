@@ -13,7 +13,7 @@ export function Stats() {
         return (
             <div>
                 <PrimaryInfo text="Stats central."/>
-                <LoginButton text="LOGIN TO SPOTIFY"/>
+                <LoginButton text="LOGIN TO SPOTIFY" onclick={authenticate}/>
             </div>
         )
     }
@@ -23,7 +23,7 @@ export function Stats() {
 export function LoginButton(props) {
     return (
         <div className='login-button-wrapper'>
-            <div className='login-button' onClick={() => authenticate()}>
+            <div className='login-button' onClick={() => props.onclick}>
                 <b>{props.text}</b>
             </div>
         </div>
