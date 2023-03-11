@@ -5,8 +5,8 @@ import {Link} from "react-router-dom";
 export function Privacy() {
     return (
         <div>
-            <PrimaryInfo text="🚧Privacy Policy🚧"/>
-            <div className={'terms-list'}>
+            <PrimaryInfo text="Privacy Policy"/>
+            <div className={'terms-list default-text-color'}>
                 <p><b>We respect your privacy and are committed to protecting your personal information. This Privacy Policy
                     explains how we collect, use, and disclose information when you use our web app that tracks your Spotify
                     listening history and reports interesting statistics for it. By using our web app, you consent to our
