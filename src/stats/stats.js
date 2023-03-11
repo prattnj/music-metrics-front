@@ -23,7 +23,7 @@ export function Stats() {
 export function LoginButton(props) {
     return (
         <div className='login-button-wrapper'>
-            <div className='login-button' onClick={props.onclick}>
+            <div className='login-button' onClick={() => props.onclick}>
                 <b>{props.text}</b>
             </div>
         </div>
