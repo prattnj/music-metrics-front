@@ -92,5 +92,7 @@ export function getToken() {
 
 function performLogin() {
     console.log("logging in...")
+    localStorage.setItem('token', 'test')
+    window.reload()
     // TODO
 }
