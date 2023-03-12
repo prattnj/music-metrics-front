@@ -97,8 +97,8 @@ export function LoginForm() {
 
     return (
         <div className='login-input-wrapper'>
-            <input type="text" placeholder="Username" className="login-input" onClick={handleUsernameChange}/>
-            <input type="password" placeholder="Password" className="login-input" onClick={handlePasswordChange}/>
+            <input type="text" placeholder="Username" className="login-input" onChange={handleUsernameChange}/>
+            <input type="password" placeholder="Password" className="login-input" onChange={handlePasswordChange}/>
             <LoginError isVisible={errorVisible} text={errorText}/>
             <LoginButton text={'LOGIN'} click={() => handleLogin()}/>
             <p className={'default-text-color'}>Don't have an account? <Link to={'/register'} className={'custom-link'}><u>Create one</u></Link> or</p>
