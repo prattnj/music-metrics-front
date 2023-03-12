@@ -83,6 +83,8 @@ export function LoginForm() {
             setErrorVisible(true);
             setErrorText('Invalid username or password.');
         } else {
+            setErrorVisible(false);
+            setErrorText('');
             // todo: call login api
             // if login successful, remove error message, set token in local storage and reload
             // else, reset error message
