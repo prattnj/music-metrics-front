@@ -1,7 +1,8 @@
 .register-message {
     font-size: 15px;
-    width: 350px;
+    width: 300px;
     margin: 15px;
+    text-align: center;
 }
 
 .register-options {

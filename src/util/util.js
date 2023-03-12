@@ -93,6 +93,6 @@ export function getToken() {
 function performLogin() {
     console.log("logging in...")
     localStorage.setItem('token', 'test')
-    location.reload();
+    //location.reload();
     // TODO
 }
