@@ -79,7 +79,7 @@ export function LoginForm() {
     }
 
     function handleLogin() {
-        console.log('username length: ' + username.length + ', password length: ' + password.length);
+        console.log('username length: ' + username.length + ', password length: ' + password.length + ', username: ' + username + ', password: ' + password);
         if (username.length > 30 || username.length < 5 || password.length > 30 || password.length < 8) {
             setErrorVisible(true);
             setErrorText('Invalid username or password.');
