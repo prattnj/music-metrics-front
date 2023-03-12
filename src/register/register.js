@@ -14,7 +14,7 @@ export class RegisterForm extends React.Component {
                 <input type="password" placeholder="Password" className="login-input"/>
                 <input type="password" placeholder="Confirm password" className="login-input"/>
                 <input type="text" placeholder="Email" className="login-input"/>
-                <div className='login-button' onClick={() => this.validate()}>Create your free account</div>
+                <div className='login-button bottom-margin' onClick={() => this.validate()}>Create your free account</div>
                 <LoginWithGoogle />
                 <div className={'register-message default-text-color'}>By registering, you agree to our
                     <Link className={'custom-link'} to={'/privacy'}> Privacy Policy</Link> and
