@@ -1,5 +1,5 @@
 import './stats.css';
-import {getToken, LoginForm, PrimaryInfo} from "../util/util";
+import {getToken, LoginButton, LoginForm, PrimaryInfo} from "../util/util";
 
 export function Stats() {
     onload()
@@ -18,16 +18,6 @@ export function Stats() {
         )
     }
 
-}
-
-export function LoginButton(props) {
-    return (
-        <div className='login-button-wrapper'>
-            <div className='login-button' onClick={props.click}>
-                <b>{props.text}</b>
-            </div>
-        </div>
-    )
 }
 
 function onload() {

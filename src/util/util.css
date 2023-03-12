@@ -17,6 +17,12 @@
     font-size: 18px;
 }
 
+.login-error {
+    color: #e24646;
+    font-size: 15px;
+    margin: 10px;
+}
+
 .login-input {
     background-color: #2a2e2f;
     padding: 10px;
@@ -80,6 +86,13 @@
     font-size: 60px;
     color: #cce2e6;
     margin: 40px;
+}
+
+.register-message {
+    font-size: 15px;
+    width: 300px;
+    margin: 15px;
+    text-align: center;
 }
 
 .test-border {

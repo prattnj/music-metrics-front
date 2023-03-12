@@ -2,9 +2,10 @@ import './util.css';
 import logo from './logo.png';
 import {Link} from 'react-router-dom';
 
-import React from "react";
-import { GoogleLogin } from '@react-oauth/google';
-import {LoginButton} from "../stats/stats";
+import React, {useState} from "react";
+import {GoogleLogin} from '@react-oauth/google';
+
+// ELEMENTS COMMON TO EVERY PAGE ---------------------------------------------------------------------------------------
 
 export function Header() {
     return (
@@ -60,14 +61,55 @@ export function PrimaryInfo(props) {
     )
 }
 
+// LOGIN ELEMENTS ------------------------------------------------------------------------------------------------------
+
 export function LoginForm() {
+
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [errorVisible, setErrorVisible] = useState(false);
+    const [errorText, setErrorText] = useState('');
+
+    function handleUsernameChange(event) {
+        setUsername(event.target.value);
+    }
+
+    function handlePasswordChange(event) {
+        setPassword(event.target.value);
+    }
+
+    function handleLogin() {
+        if (username.length > 30 || username.length < 5 || password.length > 30 || password.length < 8) {
+            setErrorVisible(true);
+            setErrorText('Invalid username or password.');
+        } else {
+            // todo: call login api
+            // if login successful, remove error message, set token in local storage and reload
+            // else, reset error message
+            localStorage.token = 'temp_token';
+            location.reload();
+
+        }
+    }
+
     return (
         <div className='login-input-wrapper'>
-            <input type="text" placeholder="Username" className="login-input"/>
-            <input type="password" placeholder="Password" className="login-input"/>
-            <LoginButton text={'LOGIN'} click={() => performLogin()}/>
+            <input type="text" placeholder="Username" className="login-input" onClick={handleUsernameChange}/>
+            <input type="password" placeholder="Password" className="login-input" onClick={handlePasswordChange}/>
+            <LoginError isVisible={errorVisible} text={errorText}/>
+            <LoginButton text={'LOGIN'} click={() => handleLogin()}/>
             <p className={'default-text-color'}>Don't have an account? <Link to={'/register'} className={'custom-link'}><u>Create one</u></Link> or</p>
             <LoginWithGoogle/>
+        </div>
+    )
+}
+
+export function LoginButton(props) {
+    return (
+        <div className='login-button-wrapper'>
+            <div className='login-button' onClick={props.click}>
+                <b>{props.text}</b>
+            </div>
         </div>
     )
 }
@@ -75,10 +117,10 @@ export function LoginForm() {
 export function LoginWithGoogle() {
 
     const responseMessage = (response) => {
-        console.log(response);
+        console.log('google success: ' + response);
     };
     const errorMessage = (error) => {
-        console.log(error);
+        console.log('google failure: ' + error);
     };
 
     return (
@@ -86,13 +128,23 @@ export function LoginWithGoogle() {
     )
 }
 
+function LoginError(props) {
+    return (
+        <div>
+            {props.isVisible && <div className={'login-error'}>{props.text}</div>}
+        </div>
+    )
+}
+
 export function getToken() {
     return localStorage.getItem('token');
 }
 
-function performLogin() {
-    console.log("logging in...")
-    localStorage.setItem('token', 'test')
-    //location.reload();
-    // TODO
+export function RegisterMessage() {
+    return (
+        <div className={'register-message default-text-color'}>By registering, you agree to our
+            <Link className={'custom-link'} to={'/privacy'}> Privacy Policy</Link> and
+            <Link className={'custom-link'} to={'/terms'}> Terms of Service</Link>.
+        </div>
+    )
 }
