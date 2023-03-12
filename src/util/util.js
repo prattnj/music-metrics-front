@@ -41,7 +41,7 @@ export function Footer() {
     return (
         <footer className="footer default-text-color">
             <p>
-                &copy; (pending) <span onClick={() => console.log(sessionStorage)}>2023</span> Noah Pratt <span className={'text-color-white'}>&#8226;</span>
+                <span onClick={() => localStorage.clear()}>&copy;</span> (pending) <span onClick={() => console.log(sessionStorage)}>2023</span> Noah Pratt <span className={'text-color-white'}>&#8226;</span>
                 <Link to={"/privacy"} className='custom-link'> Privacy Policy</Link> <span className={'text-color-white'}>&#8226;</span>
                 <Link to={"/terms"} className='custom-link'> Terms of Service</Link> <span className={'text-color-white'}>&#8226;</span>
                 <Link to={"/about"} className='custom-link'> About</Link> <span className={'text-color-white'}>&#8226;</span>
