@@ -1,9 +1,22 @@
 import './util.css';
 import logo from './logo.png';
 import {Link} from 'react-router-dom';
-
 import React, {useState} from "react";
 import {GoogleLogin} from '@react-oauth/google';
+
+// GLOBAL CONSTANTS ----------------------------------------------------------------------------------------------------
+
+const BASE_URL = 'https://api.musicmetrics.app';
+export const USERNAME_MIN_LENGTH = 6;
+export const USERNAME_MAX_LENGTH = 30;
+export const PASSWORD_MIN_LENGTH = 8;
+export const PASSWORD_MAX_LENGTH = 30;
+export const NAME_MAX_LENGTH = 60;
+export const EMAIL_MAX_LENGTH = 254;
+const HTTP_METHODS = {
+    '/login': 'POST',
+    '/register': 'POST',
+}
 
 // ELEMENTS COMMON TO EVERY PAGE ---------------------------------------------------------------------------------------
 
@@ -79,19 +92,23 @@ export function LoginForm() {
     }
 
     function handleLogin() {
-        console.log('username length: ' + username.length + ', password length: ' + password.length + ', username: ' + username + ', password: ' + password);
-        if (username.length > 30 || username.length < 5 || password.length > 30 || password.length < 8) {
+        if (username.length > USERNAME_MAX_LENGTH || username.length < USERNAME_MIN_LENGTH
+            || password.length > PASSWORD_MAX_LENGTH || password.length < PASSWORD_MIN_LENGTH) {
             setErrorVisible(true);
             setErrorText('Invalid username or password.');
         } else {
-            setErrorVisible(false);
-            setErrorText('');
-            // todo: call login api
-            // if login successful, remove error message, set token in local storage and reload
-            // else, reset error message
-            localStorage.token = 'temp_token';
-            location.reload();
-
+            fetchData('/login', {username, password})
+                .then(data => {
+                    if (data.success) {
+                        setErrorVisible(false);
+                        setErrorText('');
+                        localStorage.token = data.token;
+                        location.reload();
+                    } else {
+                        setErrorVisible(true);
+                        setErrorText(data.message);
+                    }
+                })
         }
     }
 
@@ -103,6 +120,7 @@ export function LoginForm() {
             <LoginButton text={'LOGIN'} click={() => handleLogin()}/>
             <p className={'default-text-color'}>Don't have an account? <Link to={'/register'} className={'custom-link'}><u>Create one</u></Link> or</p>
             <LoginWithGoogle/>
+            <RegisterMessage/>
         </div>
     )
 }
@@ -131,7 +149,7 @@ export function LoginWithGoogle() {
     )
 }
 
-function LoginError(props) {
+export function LoginError(props) {
     return (
         <div>
             {props.isVisible && <div className={'login-error'}>{props.text}</div>}
@@ -150,4 +168,20 @@ export function RegisterMessage() {
             <Link className={'custom-link'} to={'/terms'}> Terms of Service</Link>.
         </div>
     )
+}
+
+// USEFUL METHODS ------------------------------------------------------------------------------------------------------
+
+export async function fetchData(endpoint, requestBody, token) {
+    fetch(BASE_URL + endpoint, {
+        method: HTTP_METHODS[endpoint],
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': token
+        },
+        body: JSON.stringify(requestBody)
+    }).then(response => response.json())
+        .then(data => {
+            return data
+        })
 }
