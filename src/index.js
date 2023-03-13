@@ -19,6 +19,8 @@ import {Social} from "./social/social";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
+const socket = new WebSocket('wss://dev.musicmetrics.app:3000/ws');
+
 root.render(
     <GoogleOAuthProvider clientId={'186887527754-vjcubupfn2f9vsf46qrtiflak8vnqii0.apps.googleusercontent.com'}>
         <BrowserRouter>
@@ -46,3 +48,4 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
